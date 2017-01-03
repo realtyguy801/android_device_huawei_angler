@@ -23,9 +23,6 @@ on early-init
     chown system system /sys/kernel/debug/kgsl/proc
 
 on init
-    # Load persistent dm-verity state
-    verity_load_state
-
     # Set permissions for persist partition
     mkdir /persist 0771 system system
     mkdir /firmware 0771 system system
@@ -56,9 +53,6 @@ on fs
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
-
-    # Update dm-verity state and set partition.*.verified properties
-    verity_update_state
 
 on boot
     # execute script to set initial CPU settings
@@ -367,13 +361,6 @@ service loc_launcher /vendor/bin/loc_launcher
     group gps inet net_raw net_admin wifi
     writepid /dev/cpuset/system-background/tasks
 
-# bugreport is triggered by holding down volume down, volume up and power
-service bugreport /system/bin/dumpstate -d -p -B -z \
-        -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-
 # start camera server as daemon
 service qcamerasvr /vendor/bin/mm-qcamera-daemon
     class late_start
@@ -489,12 +476,3 @@ service ppd /system/bin/mm-pp-daemon
 
 on property:init.svc.surfaceflinger=stopped
     stop ppd
-
-service diag_test_server /vendor/bin/diag_test_server
-    class core
-    user root
-    disabled
-
-on property:ro.boot.mode=hw-factory
-    start diag_test_server
-
