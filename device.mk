@@ -221,10 +221,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Gello
 
-# OmniStyle
-PRODUCT_PACKAGES += \
-    OmniStyle
-
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
     libtinyxml \
