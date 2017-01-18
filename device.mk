@@ -281,6 +281,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/huawei/angler/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
+# Copy over our ramdisk files for Flash kernel
+PRODUCT_COPY_FILES += \
+    device/huawei/angler/init.flash.rc:root/init.flash.rc \
+    device/huawei/angler/init.special_power.sh:root/init.special_power.sh \
+    device/huawei/angler/msm_irqbalance_flash.conf:root/msm_irqbalance.conf
+
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
 
