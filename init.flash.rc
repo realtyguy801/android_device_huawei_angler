@@ -11,7 +11,7 @@ on boot
    # Disable double tap to wake
    chown root root /sys/android_touch/doubletap2wake
    chmod 666 /sys/android_touch/doubletap2wake
-   write /sys/android_touch/doubletap2wake 0
+   write /sys/android_touch/doubletap2wake 1
    chmod 644 /sys/android_touch/doubletap2wake
 
    # Disable sweep to sleep
@@ -23,7 +23,7 @@ on boot
    # Enable sweep to wake in up and down
    chown root root /sys/android_touch/sweep2wake
    chmod 666 /sys/android_touch/sweep2wake
-   write /sys/android_touch/sweep2wake 12
+   write /sys/android_touch/sweep2wake 2
    chmod 644 /sys/android_touch/sweep2wake
 
    # Enable camera gesture
