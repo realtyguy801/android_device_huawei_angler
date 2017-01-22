@@ -284,7 +284,7 @@ PRODUCT_COPY_FILES += \
 
 # Copy over our ramdisk files for Flash kernel
 PRODUCT_COPY_FILES += \
-    device/huawei/angler/init.ex.rc:root/init.flash.rc
+    device/huawei/angler/init.ex.rc:root/init.ex.rc
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
