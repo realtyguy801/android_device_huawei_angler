@@ -222,6 +222,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Gello
 
+# OmniJaws
+PRODUCT_PACKAGES += \
+    OmniJaws
+
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
     libtinyxml \
