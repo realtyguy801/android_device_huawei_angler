@@ -225,7 +225,7 @@ PRODUCT_PACKAGES += \
 # OmniJaws
 PRODUCT_PACKAGES += \
     OmniJaws \
-    OmniClock
+    OmniClockOSS
 
 # Extra packages we can compile from source
 PRODUCT_PACKAGES += \
