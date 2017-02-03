@@ -291,6 +291,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/angler/init.ex.rc:root/init.ex.rc
 
+# 3Minit Battery Resources
+PRODUCT_COPY_FILES += \
+    device/huawei/angler/3Minit/3MinitBatteryResources.apk:system/app/3MinitBatteryResources/3MinitBatteryResources.apk.bak \
+    device/huawei/angler/3Minit/3MinitBatterySettings.apk:system/app/3MinitBatterySettings/3MinitBatterySettings.apk.bak
+
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
 
