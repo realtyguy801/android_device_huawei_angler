@@ -286,6 +286,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/huawei/angler/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
+
+# 3Minit Battery Resources
+PRODUCT_COPY_FILES += \
+    device/huawei/angler/3Minit/3MinitBatteryResources.apk:system/app/3MinitBatteryResources/3MinitBatteryResources.apk.bak \
+    device/huawei/angler/3Minit/3MinitBatterySettings.apk:system/app/3MinitBatterySettings/3MinitBatterySettings.apk.bak
+
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
 
