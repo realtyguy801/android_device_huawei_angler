@@ -287,6 +287,9 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/huawei/angler/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
+# Copy over our ramdisk files for Flash kernel
+PRODUCT_COPY_FILES += \
+    device/huawei/angler/init.du.rc:root/init.du.rc
 
 # 3Minit Battery Resources
 PRODUCT_COPY_FILES += \
@@ -300,7 +303,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=520
+    ro.sf.lcd_density=560
 
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.mdpcomp.enable=true \
