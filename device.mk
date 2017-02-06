@@ -293,8 +293,8 @@ PRODUCT_COPY_FILES += \
 
 # 3Minit Battery Resources
 PRODUCT_COPY_FILES += \
-    device/huawei/angler/3Minit/3MinitBatteryResources.apk:system/app/3MinitBatteryResources/3MinitBatteryResources.apk.bak \
-    device/huawei/angler/3Minit/3MinitBatterySettings.apk:system/app/3MinitBatterySettings/3MinitBatterySettings.apk.bak
+    device/huawei/angler/3Minit/3MinitBatteryResources.apk:system/app/3MinitBatteryResources/3MinitBatteryResources.apk \
+    device/huawei/angler/3Minit/3MinitBatterySettings.apk:system/app/3MinitBatterySettings/3MinitBatterySettings.apk
 
 DEVICE_PACKAGE_OVERLAYS := \
     device/huawei/angler/overlay
