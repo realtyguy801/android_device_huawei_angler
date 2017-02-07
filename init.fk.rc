@@ -96,16 +96,22 @@ on property:sys.boot_completed=1
     write /sys/module/lpm_levels/system/a57/a57-l2-retention/idle_enabled 1
 
     # I/O
-    write /sys/block/mmcblk0/queue/rq_affinity 0
-    write /sys/block/mmcblk0/queue/add_random 0
     write /sys/block/mmcblk0/bdi/min_ratio 5
-    write /sys/block/mmcblk0/queue/read_ahead_kb 128
+    write /sys/block/mmcblk0/queue/rq_affinity 1
+    write /sys/block/mmcblk0rpmb/queue/rq_affinity 1
+    write /sys/block/mmcblk0/queue/scheduler fiops
+    write /sys/block/mmcblk0/queue/read_ahead_kb 512
+    write /sys/block/mmcblk0rpmb/queue/scheduler fiops
+    write /sys/block/mmcblk0/queue/add_random 1
     
     # ksm
     write /sys/kernel/mm/ksm/sleep_millisecs 1500
     write /sys/kernel/mm/ksm/pages_to_scan 256
     write /sys/kernel/mm/ksm/deferred_timer 1
     write /sys/kernel/mm/ksm/run 0
+
+   # Disable fsync
+   write /sys/module/sync/parameters/fsync_enabled 0
 
     # misc
     write /sys/class/timed_output/vibrator/vmax_mv_strong 1250
