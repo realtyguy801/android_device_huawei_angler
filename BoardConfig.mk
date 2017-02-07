@@ -61,6 +61,8 @@ AUDIO_FEATURE_ENABLED_DSM_FEEDBACK := true
 
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 
+BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
+
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/huawei/angler/bluetooth
@@ -161,13 +163,16 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 #NFC
 NXP_CHIP_TYPE := 2
 
-# Enable real time lockscreen charging current values
-BOARD_GLOBAL_CFLAGS += -DBATTERY_REAL_INFO
-
 # Testing related defines
 BOARD_PERFSETUP_SCRIPT := platform_testing/scripts/perf-setup/angler-setup.sh
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
+
+# CMHW
+BOARD_USES_CYANOGEN_HARDWARE := true
+BOARD_HARDWARE_CLASS := \
+    hardware/cyanogen/cmhw \
+    device/huawei/angler/cmhw
 
 -include vendor/huawei/angler/BoardConfigVendor.mk
