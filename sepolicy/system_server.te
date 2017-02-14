@@ -50,3 +50,6 @@ allow system_server tap2wake_dev:file rw_file_perms;
 
 # Vibrator
 allow system_server sysfs_vibrator:file rw_file_perms;
+
+# High Brightness
+allow system_server higbrightness_dev:file rw_file_perms;
