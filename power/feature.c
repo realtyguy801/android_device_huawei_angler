@@ -28,6 +28,9 @@
 
 #define WAKE_GESTURE_PATH "/sys/devices/soc.0/f9924000.i2c/i2c-2/2-0070/input/input0/wake_gesture"
 
+#define HIGH_BRIGHTNESS_MODE_PATH "/sys/devices/virtual/graphics/fb0/hbm"
+#define POWER_FEATURE_HIGH_BRIGHTNESS_MODE 1 // this must be the same as what is being passed from the rom's powerhal
+
 static void sysfs_write(char *path, char *s)
 {
     char buf[80];
@@ -54,6 +57,14 @@ void set_feature(struct power_module *module, feature_t feature, int state)
     switch (feature) {
     case POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
         sysfs_write(WAKE_GESTURE_PATH, state ? "1" : "0");
+        break;
+    default:
+        ALOGW("Error setting the feature, it doesn't exist %d\n", feature);
+        break;
+    }
+    switch (feature) {
+    case POWER_FEATURE_HIGH_BRIGHTNESS_MODE:
+        sysfs_write(HIGH_BRIGHTNESS_MODE_PATH, state ? "1" : "0");
         break;
     default:
         ALOGW("Error setting the feature, it doesn't exist %d\n", feature);

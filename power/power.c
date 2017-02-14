@@ -57,8 +57,7 @@
 #define CPU5_ONLINE_PATH "/sys/devices/system/cpu/cpu5/online"
 #define CPU6_ONLINE_PATH "/sys/devices/system/cpu/cpu6/online"
 #define CPU7_ONLINE_PATH "/sys/devices/system/cpu/cpu7/online"
-#define HIGH_BRIGHTNESS_MODE_PATH "/sys/devices/virtual/graphics/fb0/hbm"
-#define POWER_FEATURE_HIGH_BRIGHTNESS_MODE 1 // this must be the same as what is being passed from the rom's powerhal
+
 
 #define PLATFORM_SLEEP_MODES 2
 #define XO_VOTERS 3
@@ -252,17 +251,6 @@ static long long calc_timespan_us(struct timespec start, struct timespec end) {
     return diff_in_us;
 }
 
-static void set_feature(struct power_module *module, feature_t feature, int state)
-{
-    switch (feature) {
-    case POWER_FEATURE_HIGH_BRIGHTNESS_MODE:
-        sysfs_write(HIGH_BRIGHTNESS_MODE_PATH, state ? "1" : "0");
-        break;
-    default:
-        ALOGW("Error setting the feature, it doesn't exist %d\n", feature);
-        break;
-    }
-}
 
 static void power_hint(struct power_module *module, power_hint_t hint,
         void *data)
