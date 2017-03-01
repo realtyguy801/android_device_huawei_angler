@@ -222,9 +222,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Gello
 
-# OmniJaws
+# Omni Packages
 PRODUCT_PACKAGES += \
-    OmniJaws \
     OmniClockOSS
 
 # Extra packages we can compile from source
