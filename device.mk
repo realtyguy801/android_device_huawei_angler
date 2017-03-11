@@ -145,10 +145,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.vulkan.version-1_0_3.xml:system/etc/permissions/android.hardware.vulkan.version.xml
 
 
-# MSM IRQ Balancer configuration file
-PRODUCT_COPY_FILES += \
-    device/huawei/angler/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
-
 # Qseecomd configuration file
 PRODUCT_COPY_FILES += \
     device/huawei/angler/init.angler.qseecomd.sh:system/bin/init.angler.qseecomd.sh
@@ -286,12 +282,12 @@ PRODUCT_COPY_FILES += \
     device/huawei/angler/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf \
     device/huawei/angler/nfc/libnfc-nxp.conf:system/etc/libnfc-nxp.conf
 
-# Copy over our ramdisk files for Franco kernel
+# Copy over our ramdisk files for Flash kernel
 PRODUCT_COPY_FILES += \
-    device/huawei/angler/init.fk.rc:root/init.fk.rc \
-    device/huawei/angler/init.performance_profiles.rc:root/init.performance_profiles.rc \
+    device/huawei/angler/init.flash.rc:root/init.flash.rc \
     device/huawei/angler/init.special_power.sh:root/init.special_power.sh \
-    device/huawei/angler/init.supolicy.sh:root/init.supolicy.sh
+    device/huawei/angler/msm_irqbalance_flash.conf:root/msm_irqbalance.conf
+
 
 # 3Minit Battery Resources
 PRODUCT_COPY_FILES += \
