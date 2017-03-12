@@ -8,10 +8,10 @@ on boot
    write /sys/android_touch/wake_gestures 0
    chmod 644 /sys/android_touch/wake_gestures
 
-   # Disable double tap to wake
+   # Enable double tap to wake
    chown root root /sys/android_touch/doubletap2wake
    chmod 666 /sys/android_touch/doubletap2wake
-   write /sys/android_touch/doubletap2wake 0
+   write /sys/android_touch/doubletap2wake 1
    chmod 644 /sys/android_touch/doubletap2wake
 
    # Disable sweep to sleep
@@ -23,7 +23,7 @@ on boot
    # Enable sweep to wake in up and down
    chown root root /sys/android_touch/sweep2wake
    chmod 666 /sys/android_touch/sweep2wake
-   write /sys/android_touch/sweep2wake 12
+   write /sys/android_touch/sweep2wake 2
    chmod 644 /sys/android_touch/sweep2wake
 
    # Enable camera gesture
@@ -109,7 +109,7 @@ on property:sys.boot_completed=1
    write /sys/module/lazyplug/parameters/lazyplug_active 1
 
    # Backlight dimmer
-   write /sys/module/mdss_fb/parameters/backlight_dimmer 1
+   write /sys/module/mdss_fb/parameters/backlight_dimmer 0
 
    # Tune Adrenoboost
    write /sys/devices/soc.0/fdb00000.qcom,kgsl-3d0/devfreq/fdb00000.qcom,kgsl-3d0/adrenoboost 1
@@ -119,6 +119,9 @@ on property:sys.boot_completed=1
    write /sys/kernel/sound_control/headphone_pa_gain "1 1"
    write /sys/kernel/sound_control/mic_gain 10
    write /sys/kernel/sound_control/headphone_gain "6 6"
+
+   # Disable fsync
+   write /sys/module/sync/parameters/fsync_enabled 0
 
    # UKSM
    write /sys/kernel/mm/uksm/run 1
