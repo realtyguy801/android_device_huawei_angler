@@ -286,7 +286,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/huawei/angler/init.flash.rc:root/init.flash.rc \
     device/huawei/angler/init.special_power.sh:root/init.special_power.sh \
-    device/huawei/angler/msm_irqbalance_flash.conf:root/msm_irqbalance.conf
+    device/huawei/angler/msm_irqbalance.conf:root/msm_irqbalance.conf
 
 
 # 3Minit Battery Resources
