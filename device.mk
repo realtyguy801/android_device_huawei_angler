@@ -219,8 +219,8 @@ PRODUCT_PACKAGES += \
     gps.msm8994
 
 # Gello
-PRODUCT_PACKAGES += \
-    Gello
+#PRODUCT_PACKAGES += \
+#    Gello
 
 # Omni Packages
 PRODUCT_PACKAGES += \
