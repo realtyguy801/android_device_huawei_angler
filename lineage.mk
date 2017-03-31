@@ -8,11 +8,6 @@ $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/huawei/angler/aosp_angler.mk)
 
-ifeq ($(WITH_PN_GAPPS),true)
-# Inherit arm64 phone gapps
-$(call inherit-product-if-exists, vendor/gapps/arm64-phone-gapps.mk)
-endif
-
 ## Device identifier. This must come after all inclusions
 PRODUCT_NAME := lineage_angler
 PRODUCT_BRAND := google
