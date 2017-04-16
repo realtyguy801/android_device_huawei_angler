@@ -2,7 +2,7 @@
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1440
 
-# Inherit some common CM stuff.
+# Inherit some common stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit device configuration
@@ -17,5 +17,5 @@ TARGET_VENDOR := huawei
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=angler \
-    BUILD_FINGERPRINT=google/angler/angler:7.1.1/N2G47H/3783593:user/release-keys \
-    PRIVATE_BUILD_DESC="angler-user 7.1.1 N2G47H 3783593 release-keys"
+    BUILD_FINGERPRINT=google/angler/angler:7.1.2/N2G47H/3783593:user/release-keys \
+    PRIVATE_BUILD_DESC="angler-user 7.1.2 N2G47H 3783593 release-keys"

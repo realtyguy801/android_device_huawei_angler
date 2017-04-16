@@ -1,8 +1,9 @@
 #!/system/bin/sh
 
 SUPOLICY=`which supolicy`
+SULIBS="/su/lib:/system/lib64:/system/lib"
 
-$SUPOLICY --live \
+LD_LIBRARY_PATH=$SULIBS $SUPOLICY --live \
         "allow ssr device dir read" \
         "allow shell dalvikcache_data_file file write" \
         "allow shell dalvikcache_data_file dir { write add_name }" \
