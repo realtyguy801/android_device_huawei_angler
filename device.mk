@@ -219,9 +219,9 @@ PRODUCT_PACKAGES += \
     libgps.utils \
     gps.msm8994
 
-# Gello
-#PRODUCT_PACKAGES += \
-#    Gello
+# Jelly
+PRODUCT_PACKAGES += \
+    Jelly
 
 # Omni Packages
 PRODUCT_PACKAGES += \
