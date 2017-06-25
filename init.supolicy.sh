@@ -1,13 +1,14 @@
 #!/system/bin/sh
 
-SUPOLICY=`which supolicy`
 SULIBS="/su/lib:/system/lib64:/system/lib"
 
-LD_LIBRARY_PATH=$SULIBS $SUPOLICY --live \
+for SUPOLICY in `which supolicy sepolicy-inject`;
+do
+	LD_LIBRARY_PATH=$SULIBS $SUPOLICY --live \
         "allow ssr device dir read" \
         "allow shell dalvikcache_data_file file write" \
         "allow shell dalvikcache_data_file dir { write add_name }" \
-        "allow mediaserver mediaserver_tmpfs file { read write execute }" \
+        "allow audioserver audioserver_tmpfs file { read write execute }" \
         "allow untrusted_app kernel file { ioctl read write getattr append open }" \
         "allow untrusted_app kernel dir search" \
         "allow isolated_app app_data_file dir search" \
@@ -28,3 +29,4 @@ LD_LIBRARY_PATH=$SULIBS $SUPOLICY --live \
 	"allow shell shell capability dac_override" \
 	"allow untrusted_app sysfs_led dir search" \
 	"allow untrusted_app sysfs_led file { read getattr open }"
+done
